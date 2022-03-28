@@ -20,7 +20,7 @@ then
 	sudo wg-quick up wg0
 fi
 
-# ask what scan type to do. Need to add some types and debug rebgion and file.
+# ask what scan type to do. Need to add some types and debug region and file.
 scantype="$(zenity --height=300 --width=300 --list \
 		--radiolist \
 		--title="Choose a scan type" \
