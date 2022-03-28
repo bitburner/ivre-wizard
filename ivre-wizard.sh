@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Title Splash
-echo "C"
+echo "IVRE"
 echo " (\.   \      ,/)"
 echo "  \(   |\     )/"
 echo "  //\  | \   /\\"
