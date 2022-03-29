@@ -94,15 +94,15 @@ zenity --height=100 --width=300 --question --text "Do the scan?"
 if [[ $? = 0 ]];
 
 then
-	echo -e "⏳ ${GREEN}Scan Started${NOCOLOR} as $USER" &&
+	echo -e "⏳ ${GREEN}Scan Started as $USER ${NOCOLOR}" &&
 	ivre runscans $scan $ask --categories ${cat} --limit $setlimit --output=XMLFork --processes $setprocesses &&
-	echo -e "⏳ ${GREEN}Import Started ${NOCOLOR} as $USER" &&
+	echo -e "⏳ ${GREEN}Import Started as $USER ${NOCOLOR}" &&
 	ivre scan2db -c ${cat} -s ${scansource} -r scans/${cat}/up/*;
-	echo -e "⌛ ${GREEN}Import Finishing. ${ORANGE}Be Patient ${NOCOLOC} as $USER..." &&
+	echo -e "⌛ ${GREEN}Import Finishing as $USER ${ORANGE}Be Patient, this may take a while...${NOCOLOC}" &&
 	sudo ivre db2view nmap &&
 	echo -e "🛠 ${RED}Removing Scans after import. ${ORANGE}Almost done...${NOCOLOR}" &&
 	sudo rm -rf scans/* &&
-	echo -e "❗${GREEN}Scans Deleted${NOCOLOR}"
+	echo -e "❗${GREEN}Imported Scans Deleted${NOCOLOR}"
 else
 echo "Bye"
 exit
