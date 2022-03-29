@@ -2,8 +2,6 @@
 
 # colors
 
-
-
 # Title Splash
 
 echo " IVRE "
