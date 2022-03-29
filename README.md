@@ -14,10 +14,10 @@ An interactive wizard front end for IVRE to make creating scans to the database 
 I created this script for doing scans with IVRE (https://ivre.rocks/) on Kali (https://www.kali.org/) where IVRE comes pre installed and configured. This makes scanning with IVRE more practical for non-production environments like for CTF and labs. I recommend setting up Wireguard on Linode or other cloud host and pipe all your scan traffic through there. 
 
 # Requirements
-IVRE - Comes ready to go in Kali
-zenity - should be installed in Kali by default.
-figlet - apt install figlet
-toilet - apt install toilet
+- IVRE - Comes ready to go in Kali.
+- zenity - should be installed in Kali by default.
+- figlet - apt install figlet.
+- toilet - apt install toilet.
 
 # Install and run
 
