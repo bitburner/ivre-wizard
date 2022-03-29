@@ -44,7 +44,7 @@ Run the script
 ```
 sudo ./ivre-wizard-wizard/ivre-wizard.sh
 ```
-If you have trouble running in sudo try without but when it runs the httpd server at the end it will be with sudo wich will cause it to look for the scans folder in the root users folder not the user who started the scan. Quit it and run it again by hand with "ivre httpd --bind-address 0.0.0.0" This is one of the main reason I have the script tell you with what accounts it's doing certain processes so you know where things end up. I'll try to fix this eventually.
+If you have trouble running in sudo try without but when it runs the httpd server at the end it will be with sudo which will cause it to look for the scans folder in the root users folder not the user who started the scan. Quit it and run it again by hand with "ivre httpd --bind-address 0.0.0.0" This is one of the main reason I have the script tell you with what accounts it's doing certain processes so you know where things end up. I'll try to fix this eventually.
 
 # Useage
 
