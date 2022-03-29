@@ -2,15 +2,21 @@
 
 # colors
 
+NOCOLOR='\033[0m'
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+
+
 # Title Splash
 
-echo "IVRE"
+echo -e "${ORANGE}IVRE${NOCOLOR}"
 echo " (\.   \      ,/) _                  _  "
 echo "  \(   |\     )/ (_)______ _ _ __ __| | "
 echo "  //\  | \   /\  | |_  / _| | '__/ _  | "
 echo " (/ /\_#oo#_/\ \)| |/ / (_| | | | (_| | "
 echo "  \/\  ####  /\/ |_/___\__|_|_|  \__,_| "
-echo "By BitBurner"
+echo -e "${ORANGE}By BitBurner${NOCOLOR}"
 
 # Ask to start Wireguard VPN tunnel
 
@@ -88,24 +94,36 @@ zenity --height=100 --width=300 --question --text "Do the scan?"
 if [[ $? = 0 ]];
 
 then
-	toilet -f term -F border Scan Started as $USER
+	echo -e "⏳ ${GREEN}Scan Started${NOCOLOR} as $USER" &&
 	ivre runscans $scan $ask --categories ${cat} --limit $setlimit --output=XMLFork --processes $setprocesses &&
-	toilet -f term -F border Import Started as $USER &&
+	echo -e "⏳ ${GREEN}Import Started ${NOCOLOR} as $USER" &&
 	ivre scan2db -c ${cat} -s ${scansource} -r scans/${cat}/up/*;
-	toilet -f term -F border Import Finishing as $USER... &&
+	echo -e "⌛ ${GREEN}Import Finishing. ${ORANGE}Be Patient ${NOCOLOC} as $USER..." &&
 	sudo ivre db2view nmap &&
-	toilet -f term -F border Removing Scans. Almost done... &&
+	echo -e "🛠 ${RED}Removing Scans after import. ${ORANGE}Almost done...${NOCOLOR}" &&
 	sudo rm -rf scans/* &&
-	toilet -f term -F border Scans Deleted
+	echo -e "❗${GREEN}Scans Deleted${NOCOLOR}"
 else
 echo "Bye"
 exit
 
 fi
-figlet ALL DONE!
+                                                         
+echo -e "${GREEN}"                                                         
+echo " (\.   \      ,/)"
+echo "  \(   |\     )/ "
+echo "  //\  | \   /\  "
+echo " (/ /\_#oo#_/\ \)"
+echo "  \/\_ #### _/\/____   "                  
+echo "    / \  | | | |  _ \  ___  _ __   ___  "
+echo "   / _ \ | | | | | | |/ _ \| '_ \ / _ \ "
+echo "  / ___ \| | | | |_| | (_) | | | |  __/ "
+echo " /_/   \_\_|_| |____/ \___/|_| |_|\___| "
+echo -e "${NOCOLOR}"                                      
+
 
 # start ivre httpd server with newly added conent
-toilet -f term -F border starting http server
+echo -e "🖥 ⚡ ${GREEN}starting http server ${NOCOLOR}"
 sudo ivre httpd --bind-address 0.0.0.0
 
 exit
