@@ -29,7 +29,7 @@ toilet
 
 # Install and run
 
-First update your IVRE IPdata (you should do this frequently (weekly)as it matches data like AS numbers etc to scanned hosts and populates the data with more meaning)
+First update your IVRE IPdata (you should do this frequently (weekly) as it matches data like AS numbers etc to scanned hosts and populates the data with more meaning)
 
 ```
 sudo ivre ipdata --download
