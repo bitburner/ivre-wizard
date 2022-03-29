@@ -11,7 +11,6 @@ echo "  \(   |\     )/"
 echo "  //\  | \   /\\"
 echo " (/ /\_#oo#_/\ \)"
 echo "  \/\  ####  /\/"
-toilet --metal -f standard IVRE
 toilet --metal -f standard Wizard
 toilet -f term By BitBurner
 
