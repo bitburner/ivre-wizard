@@ -15,9 +15,7 @@ I created this script for doing scans with IVRE (https://ivre.rocks/) on Kali (h
 
 # Requirements
 - IVRE - Comes ready to go in Kali.
-- zenity - should be installed in Kali by default.
-- figlet - apt install figlet.
-- toilet - apt install toilet.
+- zenity - Should be installed in Kali by default. If not apt install zentiy.
 
 # Install and run
 
