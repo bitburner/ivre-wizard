@@ -14,10 +14,10 @@ An interactive wizard front end for IVRE to make creating scans to the database 
 I created this script for doing scans with IVRE (https://ivre.rocks/) on Kali (https://www.kali.org/) where IVRE comes pre installed and configured. This makes scanning with IVRE more practical for non-production environments like for CTF and labs. I recommend setting up Wireguard on Linode or other cloud host and pipe all your scan traffic through there. 
 
 # Requirements
-IVRE - Comes ready to go in Kali
-zenity
-figlet
-toilet
+- IVRE - Comes ready to go in Kali.
+- zenity - should be installed in Kali by default.
+- figlet - apt install figlet.
+- toilet - apt install toilet.
 
 # Install and run
 
@@ -44,7 +44,7 @@ Run the script
 ```
 sudo ./ivre-wizard-wizard/ivre-wizard.sh
 ```
-If you have trouble running in sudo try without but when it runs the httpd server at the end it will be with sudo wich will cause it to look for the scans folder in the root users folder not the user who started the scan. Quit it and run it again by hand with "ivre httpd --bind-address 0.0.0.0" This is one of the main reason I have the script tell you with what accounts it's doing certain processes so you know where things end up. I'll try to fix this eventually.
+If you have trouble running in sudo try without but when it runs the httpd server at the end it will be with sudo which will cause it to look for the scans folder in the root users folder not the user who started the scan. Quit it and run it again by hand without sudo and see if you data appears. "ivre httpd --bind-address 0.0.0.0" This is one of the main reason I have the script tell you with what accounts it's doing certain processes so you know where things end up. I'll try to fix this eventually.
 
 # Useage
 
