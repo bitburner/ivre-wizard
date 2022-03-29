@@ -5,8 +5,21 @@ IVRE
   //\  | \   /\
  (/ /\_#oo#_/\ \)
   \/\  ####  /\/
-```
+ _____     ______  _____ 
+|_ _\ \   / /  _ \| ____|
+ | | \ \ / /| |_) |  _|  
+ | |  \ V / |  _ <| |___ 
+|___|  \_/  |_| \_\_____|
+                         
+__        ___                  _ 
+\ \      / (_)______ _ _ __ __| |
+ \ \ /\ / /| |_  / _` | '__/ _` |
+  \ V  V / | |/ / (_| | | | (_| |
+   \_/\_/  |_/___\__,_|_|  \__,_|
+                                 
 By BitBurner
+```
+
 
 # ivre-wizard
 An interactive wizard front end for IVRE to make creating scans to the database easier.
