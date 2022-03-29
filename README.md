@@ -14,27 +14,27 @@ toilet
 
 First update your IVRE IPdata (you should do this frequently (weekly)as it matches data like AS numbers etc to scanned hosts and populates the data with more meaning)
 
-'''
+```
 sudo ivre ipdata --download
-'''
+```
 
 Clone the repo
 
-'''
+```
 git clone https://github.com/bitburner/ivre-wizard.git
-'''
+```
 
 Make the script executable
 
-'''
+```
 sudo chmod +x ivre-wizard/ivre-wizard.sh
-'''
+```
 
 Run the script
 
-'''
+```
 sudo ./ivre-wizard-wizard/ivre-wizard.sh
-'''
+```
 
 # Useage
 
