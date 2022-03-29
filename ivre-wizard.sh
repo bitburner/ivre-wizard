@@ -5,14 +5,14 @@
 
 
 # Title Splash
-echo "IVRE"
-echo " (\.   \      ,/)"
-echo "  \(   |\     )/"
-echo "  //\  | \   /\\"
-echo " (/ /\_#oo#_/\ \)"
-echo "  \/\  ####  /\/"
-toilet --metal -f standard Wizard
-toilet -f term By BitBurner
+
+echo " IVRE "
+echo " (\.   \      ,/) _                  _  "
+echo "  \(   |\     )/ (_)______ _ _ __ __| | "
+echo "  //\  | \   /\  | |_  / _` | '__/ _` | "
+echo " (/ /\_#oo#_/\ \)| |/ / (_| | | | (_| | "
+echo "  \/\  ####  /\/ |_/___\__,_|_|  \__,_| " 
+echo " By BitBurner "
 
 # Ask to start Wireguard VPN tunnel
 zenity --height=100 --width=300 --question --text "Start Wireguard?"
