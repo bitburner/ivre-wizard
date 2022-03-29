@@ -9,8 +9,8 @@ echo " (\.   \      ,/) _                  _  "
 echo "  \(   |\     )/ (_)______ _ _ __ __| | "
 echo "  //\  | \   /\  | |_  / _| | '__/ _  | "
 echo " (/ /\_#oo#_/\ \)| |/ / (_| | | | (_| | "
-echo "  \/\  ####  /\/ |_/___\__|_|_|  \__,_| " 
-echo " By BitBurner "
+echo "  \/\  ####  /\/ |_/___\__|_|_|  \__,_| "
+echo "By BitBurner"
 
 # Ask to start Wireguard VPN tunnel
 
@@ -89,13 +89,12 @@ if [[ $? = 0 ]];
 
 then
 	toilet -f term -F border Scan Started as $USER
-	
-	ivre runscans $scan $ask --categories ${cat} --limit $setlimit --output=XMLFork --processes $setprocesses && 
-	toilet -f term -F border Import Started as $USER && 
-	ivre scan2db -c ${cat} -s ${scansource} -r scans/${cat}/up/*; 
-	toilet -f term -F border Import Finishing as $USER... && 
-	sudo ivre db2view nmap && 
-	toilet -f term -F border Removing Scans. Almost done... && 
+	ivre runscans $scan $ask --categories ${cat} --limit $setlimit --output=XMLFork --processes $setprocesses &&
+	toilet -f term -F border Import Started as $USER &&
+	ivre scan2db -c ${cat} -s ${scansource} -r scans/${cat}/up/*;
+	toilet -f term -F border Import Finishing as $USER... &&
+	sudo ivre db2view nmap &&
+	toilet -f term -F border Removing Scans. Almost done... &&
 	sudo rm -rf scans/* &&
 	toilet -f term -F border Scans Deleted
 else
