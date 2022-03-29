@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# colors
+
+
+
 # Title Splash
 echo "IVRE"
 echo " (\.   \      ,/)"
