@@ -74,6 +74,8 @@ fi
 # Set a dynamic category name for each scan to help organize and find scans
 cat="$(zenity --height=100 --width=300 --entry --text "Choose a Category Name With No-Spaces!")"
 
+# Set a source scan name. This is for orginization like the category.
+scansource="$(zenity --height=100 --width=300 --entry --text "Choose a Scan Source Name With No-Spaces!")"
 
 # Prompts user to set a scan limit. More to scan means more time it takes
 setlimit="$(zenity --height=100 --width=300 --entry --text "Set a Scan Limit. Exaple: 1-1000")"
@@ -91,7 +93,7 @@ then
 	
 	ivre runscans $scan $ask --categories ${cat} --limit $setlimit --output=XMLFork --processes $setprocesses && 
 	toilet -f term -F border Import Started as $USER && 
-	ivre scan2db -c ${cat} -s wise-eagle -r scans/${cat}/up/*; 
+	ivre scan2db -c ${cat} -s ${scansource} -r scans/${cat}/up/*; 
 	toilet -f term -F border Import Finishing as $USER... && 
 	sudo ivre db2view nmap && 
 	toilet -f term -F border Removing Scans. Almost done... && 

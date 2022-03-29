@@ -71,6 +71,9 @@ This script builds a IVRE runscans command from user input
 - Category Name
     - This is an arbitrary name for an organization name to filter your scans by later in the IVRE Web interface. This should not have spaces.
 
+- Scan Source Name
+    - This again is an arbitrary name you can set for organization and helps when scans are coming from multiple sources. Just remember no spaces.
+
 - Scan Limit
     - Sets the limit of the amount of hosts it will scan within the given scan type. The more you scan the longer it takes. Start with small limits for testing.
 
