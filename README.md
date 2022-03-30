@@ -31,13 +31,13 @@ Clone the repo
 git clone https://github.com/bitburner/ivre-wizard.git
 ```
 
-Make the script executable
+Make the scripts executable
 
 ```
-sudo chmod +x ivre-wizard/ivre-wizard.sh
+sudo chmod +x ivre-wizard/ivre-wizard.sh && sudo chmod -x ivre-wizard/ivre-wizard-cli.sh
 ```
 
-Run the script
+Run the script (the main script uses Zenity GUI elements to prompt the user with dialog boxes in your GUI. If you want a command line only version with no zentiy dialog boxes use ivre-wizard-cli.sh instead).
 
 ```
 sudo ./ivre-wizard-wizard/ivre-wizard.sh
