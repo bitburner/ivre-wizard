@@ -29,6 +29,7 @@ then
 fi
 
 # ask what scan type to do. Need to add some types and debug region and file.
+
 scantype="$(zenity --height=300 --width=300 --list \
 		--radiolist \
 		--title="Choose a scan type" \
@@ -57,7 +58,7 @@ if [ $scantype = "Country" ];
 
 then
 	scan="--region"
-	ask="$(zenity --height=100 --width=300 --entry --text "Enter a Region code\
+	ask="$(zenity --height=100 --width=300 --entry --text "Enter a Region code \
 	Example: RU")"
 fi
 
@@ -95,10 +96,10 @@ if [[ $? = 0 ]];
 
 then
 	echo -e "⏳ ${GREEN}Scan Started as $USER ${NOCOLOR}" &&
-	ivre runscans $scan $ask --categories ${cat} --limit $setlimit --output=XMLFork --processes $setprocesses &&
+	ivre runscans $scan $ask --limit $setlimit --output=XMLFork --processes $setprocesses &&
 	echo -e "⏳ ${GREEN}Import Started as $USER ${NOCOLOR}" &&
 	ivre scan2db -c ${cat} -s ${scansource} -r scans/${cat}/up/*;
-	echo -e "⌛ ${GREEN}Import Finishing as $USER ${ORANGE}Be Patient, this may take a while...${NOCOLOC}" &&
+	echo -e "⌛ ${GREEN}Creating View from imported scans as $USER ${ORANGE}Be patient, this may take a while...${NOCOLOC}" &&
 	sudo ivre db2view nmap &&
 	echo -e "🛠 ${RED}Removing Scans after import. ${ORANGE}Almost done...${NOCOLOR}" &&
 	sudo rm -rf scans/* &&
