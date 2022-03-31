@@ -22,7 +22,7 @@ echo -e "${ORANGE}By BitBurner${NOCOLOR}"
 
 zenity --height=100 --width=300 --question --text "Start Wireguard?"
 
-if [[ $? = 0 ]];
+if [[ $? = 1 ]];
 
 then
 	sudo wg-quick up wg0
