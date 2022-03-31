@@ -22,7 +22,7 @@ echo -e "${ORANGE}By BitBurner${NOCOLOR}"
 
 zenity --height=100 --width=300 --question --text "Start Wireguard?"
 
-if [[ $? = 1 ]];
+if [[ $? = 0 ]];
 
 then
 	sudo wg-quick up wg0
@@ -32,7 +32,7 @@ fi
 
 zenity --height=100 --width=300 --question --text "Clear the database or add to existing data?" --ok-label "Add to existing" --cancel-label "Clear the database"
 
-if [[ $? = 0 ]];
+if [[ $? = 1 ]];
 
 then
 	sudo ivre scancli --init && ivre view --init
