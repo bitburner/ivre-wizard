@@ -35,7 +35,8 @@ zenity --height=100 --width=300 --question --text "Clear the database or add to 
 if [[ $? = 1 ]];
 
 then
-	sudo ivre scancli --init && ivre view --init
+
+	sudo ivre scancli --init -y && ivre view --init -y
 fi
 
 # ask what scan type to do. Need to add some types and debug region and file.

@@ -33,7 +33,7 @@ done
 # ask to clear database and start with empty database or add to existing data
 
 while true; do
-read -p "Clear the database of previous scan data or add scan to existing data? Add or Clear " cleardb
+read -p "Clear the database of previous scan data or add scan to existing data? Add or Clear: " cleardb
 
 case $cleardb in
 
