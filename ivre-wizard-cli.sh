@@ -37,8 +37,8 @@ read -p "Clear the database of previous scan data or add scan to existing data? 
 
 case $cleardb in
 
-	[Add]*) break;;
-	[Clear]*) sudo ivre scancli --init && ivre view --init; break;;
+	[Addadd]*) break;;
+	[Clearclear]*) sudo ivre scancli --init && ivre view --init; break;;
 	*) echo "Please answer Add or Clear only."
 
 	esac
