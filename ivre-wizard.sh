@@ -28,6 +28,16 @@ then
 	sudo wg-quick up wg0
 fi
 
+# ask to clear database and start with empty database or add to existing data
+
+zenity --height=100 --width=300 --question --text "Clear the database or add to existing data?" --ok-label "Add to existing" --cancel-label "Clear the database"
+
+if [[ $? = 0 ]];
+
+then
+	sudo ivre scancli --init && ivre view --init
+fi
+
 # ask what scan type to do. Need to add some types and debug region and file.
 
 scantype="$(zenity --height=300 --width=300 --list \

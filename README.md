@@ -51,6 +51,10 @@ This script builds a IVRE runscans command from user input
 - Start Wireguard?
     - This assumes you're using a wireguard VPN and asks to make sure it started before doing a large internet scan.
 
+- Clear the Database?
+
+    - This asks if you want to keep the existing scans you've done in the past in the data base or delete and clear it before the scan. You can choose to add to the existing data. IVRE does tend to get slower when in the final step of adding a "View" when there is a lot of "relational" data it looks at. Essentiall clearing the data can make the data import faster.
+    
 - Scan Type
     - These are the different scan types "ivre runscans supports
         - Routable - entire reachable address space from your endpoint

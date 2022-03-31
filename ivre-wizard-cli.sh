@@ -30,6 +30,21 @@ case $yn in
 	esac
 done
 
+# ask to clear database and start with empty database or add to existing data
+
+while true; do
+read -p "Clear the database of previous scan data or add scan to existing data?" cleardb
+
+case $cleardb in
+
+	[Add]*) break;;
+	[Clear]*) sudo ivre scancli --init && ivre view --init; break;;
+	*) echo "Please answer Add or Clear only."
+
+	esac
+done
+
+
 # ask what scan type to do. Need to add some types and debug region and file.
 echo ""
 PS3="
