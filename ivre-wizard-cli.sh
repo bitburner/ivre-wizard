@@ -114,7 +114,7 @@ case $yn in
 	[Yy]*) echo -e "⏳ ${GREEN}Scan Started as $USER ${NOCOLOR}" &&
 	ivre runscans ${scan} ${ask} --limit $setlimit --output=XMLFork --processes $setprocesses &&
 	echo -e "⏳ ${GREEN}Import Started as $USER ${NOCOLOR}" &&
-	ivre scan2db -c ${category//[[:blank;]]/} -s ${scansource//[[:blank;]]/} -r scans/${category//[[:blank;]]/}/up/*;
+	ivre scan2db -c ${category//[[:blank;]]/} -s ${scansource//[[:blank;]]/} -r scans/*/up/*;
 	echo -e "⌛ ${GREEN}Creating View from imported scans as $USER ${ORANGE}Be patient, this may take a while...${NOCOLOC}" &&
 	ivre db2view nmap &&
 	echo -e "🛠 ${RED}Removing Scans after import. ${ORANGE}Almost done...${NOCOLOR}" &&
