@@ -112,9 +112,9 @@ while true; do
 read -p "Do the scan? y/n: " yn
 case $yn in
 	[Yy]*) echo -e "⏳ ${GREEN}Scan Started as $USER ${NOCOLOR}" &&
-	ivre runscans ${scan} ${ask} --limit $setlimit --output=XMLFork --processes $setprocesses &&
+	sudo ivre runscans ${scan} ${ask} --limit $setlimit --output=XMLFork --processes $setprocesses &&
 	echo -e "⏳ ${GREEN}Import Started as $USER ${NOCOLOR}" &&
-	ivre scan2db -c ${category//[[:blank;]]/} -s ${scansource//[[:blank;]]/} -r scans/${category}/up/*;
+	sudo ivre scan2db -c ${category//[[:blank;]]/} -s ${scansource//[[:blank;]]/} -r scans/${category}/up/*;
 	echo -e "⌛ ${GREEN}Creating View from imported scans as $USER ${ORANGE}Be patient, this may take a while...${NOCOLOC}" &&
 	sudo ivre db2view nmap &&
 	echo -e "🛠 ${RED}Removing Scans after import. ${ORANGE}Almost done...${NOCOLOR}" &&
