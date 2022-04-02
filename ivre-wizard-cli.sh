@@ -44,6 +44,19 @@ case $cleardb in
 	esac
 done
 
+# ask to download latest ipdata
+
+while true; do
+read -p "Download the latest IPData? (*Should be done once a week) Yes or Skip: " ipdata
+
+case $ipdata in
+
+	[SkipskipNono]*) break;;
+	[Yesyes*) sudo ivre ipdata --download; break;;
+	*) echo "Please answer Yes or Skip only."
+
+	esac
+done
 
 # ask what scan type to do. Need to add some types and debug region and file.
 echo ""

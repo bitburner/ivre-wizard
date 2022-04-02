@@ -39,6 +39,17 @@ then
 	sudo ivre scancli --init && ivre view --init
 fi
 
+# ask to update IP data
+
+zenity --height=100 --width=300 --question --text "Download latests IPData (*Should do once a week)?" --ok-label "Yes" --cancel-label "Skip"
+
+if [[ $? = 1 ]];
+
+then
+
+	sudo ivre ipdate --download
+fi
+
 # ask what scan type to do. Need to add some types and debug region and file.
 
 scantype="$(zenity --height=300 --width=300 --list \
