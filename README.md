@@ -25,7 +25,12 @@ First update your IVRE IPdata (you should do this frequently (weekly) as it matc
 sudo ivre ipdata --download
 ```
 
-Clone the repo
+Clone the repo into your /opt/folder
+
+
+```
+cd /opt/
+```
 
 ```
 git clone https://github.com/bitburner/ivre-wizard.git
@@ -34,13 +39,17 @@ git clone https://github.com/bitburner/ivre-wizard.git
 Make the scripts executable
 
 ```
-sudo chmod +x ivre-wizard/ivre-wizard.sh && sudo chmod -x ivre-wizard/ivre-wizard-cli.sh
+cd /ivre-wizard/
+```
+
+```
+sudo chmod +x ivre-wizard.sh && sudo chmod -x ivre-wizard-cli.sh
 ```
 
 Run the script (the main script uses Zenity GUI elements to prompt the user with dialog boxes in your GUI. If you want a command line only version with no zentiy dialog boxes use ivre-wizard-cli.sh instead).
 
 ```
-sudo ./ivre-wizard-wizard/ivre-wizard.sh
+sudo ./ivre-wizard.sh
 ```
 If you have trouble running in sudo try without but when it runs the httpd server at the end it will be with sudo which will cause it to look for the scans folder in the root users folder not the user who started the scan. Quit it and run it again by hand without sudo and see if you data appears. "ivre httpd --bind-address 0.0.0.0" This is one of the main reason I have the script tell you with what accounts it's doing certain processes so you know where things end up. I'll try to fix this eventually.
 
@@ -55,6 +64,9 @@ This script builds a IVRE runscans command from user input
 
     - This asks if you want to keep the existing scans you've done in the past in the data base or delete and clear it before the scan. You can choose to add to the existing data. IVRE does tend to get slower when in the final step of adding a "View" when there is a lot of "relational" data it looks at. Essentiall clearing the data can make the data import faster.
     
+- Download IPdata?
+    - This downloads the latest IPData that matches IP data with meta information like ASNumbers etc. This should be done onece a week do if you've not run a scan in a while you should do this.
+
 - Scan Type
     - These are the different scan types "ivre runscans supports
         - Routable - entire reachable address space from your endpoint
