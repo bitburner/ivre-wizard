@@ -47,12 +47,12 @@ done
 # ask to download latest ipdata
 
 while true; do
-read -p "Download the latest IPData? (*Should be done once a week) Yes or Skip: " ipdata
+read -p "Download the latest IPData? (*Should be done once a week) Yes or No: " ipdata
 
 case $ipdata in
 
-	[SkipskipNono]*) break;;
-	[Yesyes*) sudo ivre ipdata --download; break;;
+	[Nono]*) break;;
+	[Yesyes]*) sudo ivre ipdata --download; break;;
 	*) echo "Please answer Yes or Skip only."
 
 	esac
