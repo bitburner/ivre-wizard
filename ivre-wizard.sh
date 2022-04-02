@@ -36,7 +36,7 @@ if [[ $? = 1 ]];
 
 then
 
-	sudo ivre scancli --init -y && ivre view --init -y
+	sudo ivre scancli --init && ivre view --init
 fi
 
 # ask what scan type to do. Need to add some types and debug region and file.
