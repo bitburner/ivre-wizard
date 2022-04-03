@@ -10,6 +10,8 @@ By BitBurner
 # ivre-wizard
 An interactive wizard front end for IVRE to make creating scans to the database easier.
 
+[![asciicast](https://asciinema.org/a/Fe4JzscVwRBxRRuR5yO3Obw8s.svg)](https://asciinema.org/a/Fe4JzscVwRBxRRuR5yO3Obw8s)
+
 # Why?
 I created this script for doing scans with IVRE (https://ivre.rocks/) on Kali (https://www.kali.org/) where IVRE comes pre installed and configured. This makes scanning with IVRE more practical for non-production environments like for CTF and labs. I recommend setting up Wireguard on Linode or other cloud host and pipe all your scan traffic through there. 
 
