@@ -13,7 +13,7 @@ An interactive wizard front end for IVRE to make creating scans to the database 
 [![asciicast](https://asciinema.org/a/Fe4JzscVwRBxRRuR5yO3Obw8s.svg)](https://asciinema.org/a/Fe4JzscVwRBxRRuR5yO3Obw8s)
 
 # Why?
-I created this script for doing scans with IVRE (https://ivre.rocks/) on Kali (https://www.kali.org/) where IVRE comes pre installed and configured. This makes scanning with IVRE more practical for non-production environments like for CTF and labs. I recommend setting up Wireguard on Linode or other cloud host and pipe all your scan traffic through there. 
+I created this script for doing scans with IVRE (https://ivre.rocks/) on Kali (https://www.kali.org/) where IVRE comes pre installed and configured. This makes scanning with IVRE more practical for non-production environments like for CTF and labs. I recommend setting up Wireguard on Linode or another cloud host and pipe all your scan traffic through there. 
 
 # Requirements
 - IVRE - Comes ready to go in Kali.
@@ -64,10 +64,10 @@ This script builds a IVRE runscans command from user input
 
 - Clear the Database?
 
-    - This asks if you want to keep the existing scans you've done in the past in the data base or delete and clear it before the scan. You can choose to add to the existing data. IVRE does tend to get slower when in the final step of adding a "View" when there is a lot of "relational" data it looks at. Essentiall clearing the data can make the data import faster.
+    - This asks if you want to keep the existing scans you've done in the past in the data base or delete and clear it before the scan. You can choose to add to the existing data. IVRE does tend to get slower when in the final step of adding a "View" when there is a lot of "relational" data it looks at. Essentially clearing the data can make the data import faster.
     
 - Download IPdata?
-    - This downloads the latest IPData that matches IP data with meta information like ASNumbers etc. This should be done onece a week do if you've not run a scan in a while you should do this.
+    - This downloads the latest IPData that matches IP data with meta information like ASNumbers etc. This should be done once a week do if you've not run a scan in a while you should do this.
 
 - Scan Type
     - These are the different scan types "ivre runscans supports
@@ -75,7 +75,7 @@ This script builds a IVRE runscans command from user input
         - AS-Number - AS Number. You can use https://bgp.he.net for reference
         - Country - Region code (*this needs some work still)
         - Network - General network scan example: 192.168.1.0/24
-        - File - This is a path to a file of a list of IPs on single line
+        - File - This is a path to a file of a list of IPs on a single line
 
 - Category Name
     - This is an arbitrary name for an organization name to filter your scans by later in the IVRE Web interface. This should not have spaces.
@@ -90,6 +90,6 @@ This script builds a IVRE runscans command from user input
     - This is the number of instances of NMAP that do the actual scan. If you have 1000 hosts to scan and choose 10 instances, 10 NMAPS will scan 100 hosts each simultaneously. Be careful here as this is CPU intensive. Not RAM intensive at all so keep that in mind if making say a virtual machine to run this from.
 
 - Do the scan
-    - This runs the scan according to your inputs. When it finishes the scan it will use "ivre scan2db" and import the scan in the database. Then "ivre db2view nmap" will create a "view" according to your Category and other data from the NMAP scan. This can take as long as the scan sometimes if a lot of data was returned for hosts (Lots of open ports etc). Finally it will start the “ivre httpd” on “0.0.0.0” and you can access the webpage http://127.0.0.1/ and see the data that was just added. No data? Did you run the script as sudo? It needs to be in order to find its “scans” folder.
+    - This runs the scan according to your inputs. When it finishes the scan it will use "ivre scan2db" and import the scan in the database. Then "ivre db2view nmap" will create a "view" according to your Category and other data from the NMAP scan. This can take as long as the scan sometimes if a lot of data was returned for hosts (Lots of open ports etc). Finally, it will start the “ivre httpd” on “0.0.0.0” and you can access the webpage http://127.0.0.1/ and see the data that was just added. No data? Did you run the script as sudo? It needs to be in order to find its “scans” folder.
 
     @bitburner
